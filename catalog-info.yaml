@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: plj56ixgk-go-gitops
+  description: This is GitOps manifest for plj56ixgk-go   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=plj56ixgk-go
+    backstage.io/kubernetes-id: plj56ixgk-go 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: plj56ixgk-go
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:plj56ixgk-go
